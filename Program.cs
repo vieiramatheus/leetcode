@@ -4,11 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var result = ArrayHash.TopKFrequentElements.Solution1(new int[] { 1, 1, 1, 2, 2, 3 }, 2);
+            var result = ArrayHash.ArrayProductExceptSelf.PrefixSuffixSolution(new int[] { 1, 2, 3, 4});
+
             foreach (var item in result)
             {
                 System.Console.WriteLine(item);
-            }            
+            }
         }
     }
 }
