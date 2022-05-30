@@ -39,12 +39,15 @@ namespace Algoritmos.SlidingWindow
                     profit = Math.Max(prices[right] - prices[left], profit);
                     right++;
                 }
-                else if (prices[left] > prices[right] && left < right)
-                {
-                    left++;
-                }
                 else
-                    right++;
+                {
+                    if (prices[left] > prices[right])
+                        left++;
+
+                    if (left == right)
+                        right++;
+                }
+
             }
 
             return profit;
