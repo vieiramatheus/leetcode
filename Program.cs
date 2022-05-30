@@ -6,13 +6,19 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
+            ///Warren buffet has a Delorean
+            Console.WriteLine(SlidingWindow.WarrenBuffetStockTrader.WarrenBuffetTradeStocksInDeloreanCar(new int[] { 7, 1, 5, 3, 6, 4 }));
 
-            var result = TwoPointer.TwoSumII.TwoSum(new int[] { 1, 3, 4, 5 }, 9);
+            ///Container
+            //Console.WriteLine(TwoPointer.ContainerWithMostWater.MaxArea(new int[] { 1, 1 }));
 
-            foreach (var item in result)
-            {
-                Console.WriteLine("{0}, ", item);
-            }
+            ///triplets
+            //var result = TwoPointer._3SumTriplets.ThreeSum(new int[] { -1, 0, 1, 0 });
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine("{0}, ", item);
+            //}
 
             ///ValidPalindrome
             //var result = TwoPointer.ValidPalindrome.Solution2("A man, a plan, a canal: Panama");
