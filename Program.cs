@@ -1,14 +1,20 @@
-﻿namespace Algoritmos
+﻿using System;
+
+namespace Algoritmos
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var result = ArrayHash.ArrayProductExceptSelf.PrefixSuffixSolution(new int[] { 1, 2, 3, 4});
+            Console.WriteLine("Write encoding stuff:");
+            var result1 = ArrayHash.EncodeDecodeStrings.Encode(new string[] { "lint", "code", "love", "you" });
+            Console.WriteLine(result1);
 
-            foreach (var item in result)
+            Console.WriteLine("Write decoding stuff:");
+            var result2 = ArrayHash.EncodeDecodeStrings.Decode(result1);
+            foreach (var item in result2)
             {
-                System.Console.WriteLine(item);
+                Console.WriteLine("{0}, ", item);
             }
         }
     }
