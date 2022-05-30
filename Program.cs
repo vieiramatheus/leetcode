@@ -6,9 +6,13 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            /// -> Length of the longest consecutive elements sequence.
-            var result = ArrayHash.LongestConsecutiveSequence.Solution1(new int[] { 9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6 });
+            var result = TwoPointer.ValidPalindrome.Solution1(" ");
+
             Console.WriteLine(result);
+
+            /// -> Length of the longest consecutive elements sequence.
+            //var result = ArrayHash.LongestConsecutiveSequence.Solution1(new int[] { 0, 1, 2, 4, 8, 5, 6, 7, 9, 3, 55, 88, 77, 99, 999999999 });
+            //Console.WriteLine(result);
 
             /// -> EncodeDecodeStrings
             //Console.WriteLine("Write encoding stuff:");

@@ -56,43 +56,31 @@ namespace Algoritmos.ArrayHash
         }
 
         /// <summary>
-        /// This is a solution that I invented, basically you store every number into a dictionary (hashmap)
-        /// Then you track sequences by doing a iteration that goes min -> max number
-        /// It works, but it is too slow
+        /// This solution uses a HashSet to bucket values
+        /// But it has a better way to find sequences;
+        /// You pass through array and try to find in bucket a left neighboor
+        /// If you dont, this is the first element of the sequence
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
         public static int Solution2(int[] nums)
         {
-            var bucket = new Dictionary<int, int>();
-
-            int max = 0;
-            int min = int.MaxValue;
+            var bucket = new HashSet<int>();
             for (int index = 0; index < nums.Length; index++)
-            {
-                bucket.TryAdd(nums[index], nums[index]);
-                if (max < nums[index])
-                    max = nums[index];
-                if (min > nums[index])
-                    min = nums[index];
-            }
+                bucket.Add(nums[index]);
 
-            int sequence = 0;
-            int sequenceIndex;
             int maxSequence = 0;
+
             for (int index = 0; index < nums.Length; index++)
             {
-                if (!bucket.ContainsKey(nums[index] - 1))
+                int num = nums[index];
+                if (!bucket.Contains(num - 1))
                 {
-                    sequenceIndex = nums[index];
-                    while (bucket.ContainsKey(sequenceIndex))
-                    {
-                        sequence++;
-                        sequenceIndex++;
-                    }
+                    int length = 0;
+                    while (bucket.Contains(num + length))
+                        length++;
 
-                    if (maxSequence < sequence)
-                        maxSequence = sequence;
+                    maxSequence = Math.Max(length, maxSequence);
                 }
             }
 
