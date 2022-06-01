@@ -6,8 +6,13 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
+            //SlidingWindow.LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1);
+
+            ///LongestSubstring
+            //Console.WriteLine(SlidingWindow.LongestSubstring.LengthOfLongestSubstringWithoutHashSet("abcabcbb"));
+
             ///Warren buffet has a Delorean
-            Console.WriteLine(SlidingWindow.WarrenBuffetStockTrader.WarrenBuffetTradeStocksInDeloreanCar(new int[] { 7, 1, 5, 3, 6, 4, 0, 9 }));
+            //Console.WriteLine(SlidingWindow.WarrenBuffetStockTrader.WarrenBuffetTradeStocksInDeloreanCar(new int[] { 7, 1, 5, 3, 6, 4, 0, 9 }));
 
             ///Container
             //Console.WriteLine(TwoPointer.ContainerWithMostWater.MaxArea(new int[] { 1, 1 }));
