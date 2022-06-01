@@ -73,5 +73,129 @@ namespace Algoritmos.SlidingWindow
 
             return maxWindow;
         }
+
+        public static int SlidingWindowBigOOfTwentySixNSolutionButUsingLinq(string s, int k)
+        {
+            //the maxwindow = (k + length of the substring with the most frequencies)
+
+            int[] frequencies = new int[26];
+            int maxWindow = 0, left = 0, right = 0, maxF = 1, windowLen = 1;
+
+            while (right < s.Length)
+            {
+                if (windowLen - maxF <= k)
+                    frequencies[s[right] - 'A']++;
+
+                maxF = frequencies.Max();
+
+                windowLen = right - left + 1;
+
+                if (windowLen - maxF <= k)
+                {
+                    right++;
+                    maxWindow = Math.Max(maxWindow, windowLen);
+                }
+                else
+                {
+                    frequencies[s[left] - 'A']--;
+                    left++;
+                }
+            }
+
+            return maxWindow;
+        }
+
+        public static int SlidingWindowBigOOfTwentySixN_NeetCodeSolution(string s, int k)
+        {
+            var count = new int[26];
+            int res = 0;
+
+            int maxF()
+            {
+                int maxF = 0;
+                for (int index = 0; index < count.Length; index++)
+                    maxF = Math.Max(maxF, count[index]);
+
+                return maxF;
+            }
+
+            int left = 0;
+            for (int right = 0; right < s.Length; right++)
+            {
+                count[s[right] - 65]++;
+
+                while (right - left + 1 - maxF() > k)
+                {
+                    count[s[left] - 65]--;
+                    left++;
+                }
+
+                res = Math.Max(res, right - left + 1);
+            }
+
+            return res;
+        }
+
+        /// <summary>
+        /// NeetCode solution eliminates the iteration in frequencies array
+        /// Just updates the maxF if the new right pointer character were greater than maxF
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int SlidingWindowBigOOfN_NeetCodeSolution(string s, int k)
+        {
+            var count = new int[26];
+            int res = 0, left = 0, maxF = 0;
+            for (int right = 0; right < s.Length; right++)
+            {
+                int rIndex = s[right] - 65;
+                count[rIndex]++;
+                maxF = Math.Max(maxF, count[rIndex]);
+
+                while (right - left + 1 - maxF > k)
+                {
+                    count[s[left] - 65]--;
+                    left++;
+                }
+
+                res = Math.Max(res, right - left + 1);
+            }
+
+            return res;
+        }
+
+        /// <summary>
+        /// This was slightly more faster on leetcode
+        /// For some reason Dictionary is faster than array on leetcode
+        /// but Hashset is slower than array
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int SlidingWindowBigOOfN_NeetCodeSolution2(string s, int k)
+        {
+            var count = new Dictionary<char, int>();
+            int res = 0, left = 0, maxF = 0;
+            for (int right = 0; right < s.Length; right++)
+            {
+                if (count.ContainsKey(s[right]))
+                    count[s[right]]++;
+                else
+                    count.Add(s[right], 1);
+
+                maxF = Math.Max(maxF, count[s[right]]);
+
+                while (right - left + 1 - maxF > k)
+                {
+                    count[s[left]]--;
+                    left++;
+                }
+
+                res = Math.Max(res, right - left + 1);
+            }
+
+            return res;
+        }
     }
 }
