@@ -6,6 +6,8 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(SlidingWindow.MinimunWindowSubstring.BruteForce("a", "a"));
+
             //SlidingWindow.LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1);
 
             ///LongestSubstring
