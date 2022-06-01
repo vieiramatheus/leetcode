@@ -166,7 +166,7 @@ namespace Algoritmos.SlidingWindow
         }
 
         /// <summary>
-        /// This was slightly more faster on leetcode
+        /// This was slightly faster on leetcode
         /// For some reason Dictionary is faster than array on leetcode
         /// but Hashset is slower than array
         /// </summary>
