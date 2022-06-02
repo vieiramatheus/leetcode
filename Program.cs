@@ -6,7 +6,9 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(BinarySearch.SearchRotatedSortedArray.MonkeyCode(new int[] { 3, 1 }, 4));
+            Console.WriteLine(BinarySearch.FindMinimunRotatedSortedArray.MonkeyCode(new int[] { 2, 1 }));
+
+            //Console.WriteLine(BinarySearch.SearchRotatedSortedArray.MonkeyCode(new int[] { 3, 1 }, 4));
 
             //Console.WriteLine(Stack.ValidParenthesis.LeetCodeTop1FastSolution("()[]{}"));
 

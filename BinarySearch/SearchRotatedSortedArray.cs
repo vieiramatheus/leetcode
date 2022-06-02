@@ -31,7 +31,7 @@ namespace Algoritmos.BinarySearch
         {
             int left = 0, right = nums.Length - 1, middle = nums.Length >> 1;
             //[4, 5, 6, 7, 0, 1, 2, 3]
-            // l           m        r
+            // l        m           r
             //
             // m > l -> middle is in left part portion
             // m < r -> middle is in right part portion
@@ -54,6 +54,9 @@ namespace Algoritmos.BinarySearch
             //middle is in right portion
             else if (nums[middle] < nums[right])
             {
+                //[6, 7, 0, 1, 2, 3, 4, 5]
+                // l        m           r
+
                 //moving middle to the most lesser position in the right
                 while (middle > left && nums[middle] > nums[middle - 1])
                     middle--;
