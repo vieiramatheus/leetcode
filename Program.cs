@@ -6,7 +6,10 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(SlidingWindow.MinimunWindowSubstring.BruteForce("a", "a"));
+            Console.WriteLine(Stack.ValidParenthesis.LeetCodeTop1FastSolution("()[]{}"));
+
+            //minimun windows
+            //Console.WriteLine(SlidingWindow.MinimunWindowSubstring.NeetCode("cabwefgewcwaefgcf", "cae"));
 
             //SlidingWindow.LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1);
 
