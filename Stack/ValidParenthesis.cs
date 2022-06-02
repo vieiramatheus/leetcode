@@ -106,5 +106,39 @@ namespace Algoritmos.Stack
 
             return stack.Count == 0;
         }
+
+        /// <summary>
+        /// substitution of hashset<t> for array
+        /// do not get the top 1 rank for some reason
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool AttemptOfFasterSolution(string s)
+        {
+            var stack = new Stack<char>();
+            var open = new int[126];
+            open['('] = ')';
+            open['{'] = '}';
+            open['['] = ']';
+
+            char pop;
+            foreach (char c in s)
+            {
+                if (open[c] == 0)
+                {
+                    if (!stack.TryPop(out pop))
+                        return false;                    
+
+                    if (c != open[pop])
+                        return false;
+                }
+                else
+                {
+                    stack.Push(c);
+                }
+            }
+
+            return stack.Count == 0;
+        }
     }
 }
