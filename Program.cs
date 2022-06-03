@@ -6,7 +6,11 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(BinarySearch.FindMinimunRotatedSortedArray.MonkeyCode(new int[] { 2, 1 }));
+            var node = new LinkedList.ListNode(0, new LinkedList.ListNode(1, new LinkedList.ListNode(2, new LinkedList.ListNode(3))));
+
+            LinkedList.ReverseLinkedList.ReverseListRecursively(node);
+
+            //Console.WriteLine(BinarySearch.FindMinimunRotatedSortedArray.MonkeyCode(new int[] { 2, 1 }));
 
             //Console.WriteLine(BinarySearch.SearchRotatedSortedArray.MonkeyCode(new int[] { 3, 1 }, 4));
 
