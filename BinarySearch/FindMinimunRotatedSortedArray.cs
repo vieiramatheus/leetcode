@@ -31,7 +31,7 @@ namespace Algoritmos.BinarySearch
             }
             //[5, 6, 7, 0, 1, 2, 3
             // l        m        
-            //middle is in the right por
+            //middle is in the right portion
             else if (nums[middle] < nums[right])
             {
                 while (middle > left && nums[middle] > nums[middle - 1])
@@ -44,6 +44,14 @@ namespace Algoritmos.BinarySearch
             return Math.Min(nums[left], nums[right]);
         }
 
+        /// <summary>
+        /// To not have a pivot left must be less than right
+        /// If pivot is present then mid pointer will be on
+        /// left or right side portion, the right portion
+        /// will always have the side have the lesser number
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
         public static int NeetCode(int[] nums)
         {
             int res = nums[0], l = 0, r = nums.Length - 1, m;
@@ -54,8 +62,11 @@ namespace Algoritmos.BinarySearch
                     res = Math.Min(res, nums[l]);
                     break;
                 }
+                
                 m = (l + r) >> 1;
+
                 res = Math.Min(res, nums[m]);
+
                 if (nums[m] >= nums[l])
                     l = m + 1;
                 else
