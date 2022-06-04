@@ -6,9 +6,18 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            var node = new LinkedList.ListNode(0, new LinkedList.ListNode(1, new LinkedList.ListNode(2, new LinkedList.ListNode(3))));
+            var node = new LinkedList.ListNode(1, new LinkedList.ListNode(2, new LinkedList.ListNode(3, new LinkedList.ListNode(4, new LinkedList.ListNode(5)))));
 
-            LinkedList.ReverseLinkedList.ReverseListRecursively(node);
+            var head = LinkedList.ReorderList.NeetCodeSolution(node);
+
+            while(head != null)
+            {
+                Console.WriteLine(head.val);
+                head = head.next;
+            }
+
+
+            //LinkedList.ReverseLinkedList.ReverseListRecursively(node);
 
             //Console.WriteLine(BinarySearch.FindMinimunRotatedSortedArray.MonkeyCode(new int[] { 2, 1 }));
 
