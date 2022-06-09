@@ -6,15 +6,69 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
-            var node = new LinkedList.ListNode(1, new LinkedList.ListNode(2, new LinkedList.ListNode(3, new LinkedList.ListNode(4, new LinkedList.ListNode(5)))));
+            //var subTree = new Trees.TreeNode(val: 4,
+            //    left: new Trees.TreeNode(val: 1),
+            //    right: new Trees.TreeNode(val: 2));
 
-            var head = LinkedList.ReorderList.NeetCodeSolution(node);
+            //var tree = new Trees.TreeNode(val: 3,
+            //    left: new Trees.TreeNode(val: 4,
+            //        left: new Trees.TreeNode(val: 1),
+            //        right: new Trees.TreeNode(val: 2,
+            //            left: new Trees.TreeNode(val: 0))),
+            //    right: new Trees.TreeNode(5));
 
-            while(head != null)
-            {
-                Console.WriteLine(head.val);
-                head = head.next;
-            }
+            //var tree = new Trees.TreeNode(1, new Trees.TreeNode(1));
+            //var subtree = new Trees.TreeNode(1);
+
+            //[3,4,5,1,null,2]
+            var tree = new Trees.TreeNode(val: 3,
+                left:   new Trees.TreeNode(val: 4, left: new Trees.TreeNode(1), right: null),
+                right:  new Trees.TreeNode(val: 5, left: new Trees.TreeNode(2)));
+
+            var subtree = new Trees.TreeNode(3, left: new Trees.TreeNode(1), right: new Trees.TreeNode(2));
+
+            Console.WriteLine(Trees.SubTreeofAnotherTree.IsSubtree(tree, subtree));
+
+            //var arvore = 
+            //    new Trees.TreeNode(val: 0,
+            //        left: new Trees.TreeNode(val: 2,
+            //            left: new Trees.TreeNode(val: 1,
+            //                left: new Trees.TreeNode(val: 5),
+            //                right: new Trees.TreeNode(val: 1)),
+            //            right: null),
+            //        right: new Trees.TreeNode(val: 4,
+            //            left: new Trees.TreeNode(val: 3,
+            //                left: null,
+            //                right: new Trees.TreeNode(val: 6)),
+            //            right: new Trees.TreeNode(val: -1,
+            //                left: new Trees.TreeNode(val: 8))));
+
+            //var depth = Trees.MaxDepth.BFS_Iteration_Solution(arvore);
+
+            //Console.WriteLine(depth);
+
+            //var node1 = new LinkedList.ListNode(1, new LinkedList.ListNode(4, new LinkedList.ListNode(5)));
+            //var node2 = new LinkedList.ListNode(1, new LinkedList.ListNode(3, new LinkedList.ListNode(4)));
+            //var node3 = new LinkedList.ListNode(2, new LinkedList.ListNode(6));
+
+            //var result = LinkedList.MergeKSortedLists.ThreeMerging(new LinkedList.ListNode[] { node1, node2, node3 });
+            //var result = LinkedList.MergeKSortedLists.ThreeMerging(new LinkedList.ListNode[] { });
+
+            //while (result != null)
+            //{
+            //    Console.WriteLine(result.val);
+            //    result = result.next;
+            //}
+
+            //var result = LinkedList.HasCycle.SlowFasterPointerSolution(node);
+
+            //Console.WriteLine(result);
+
+            //while (head != null)
+            //{
+            //    Console.WriteLine(head.val);
+            //    head = head.next;
+            //}
 
 
             //LinkedList.ReverseLinkedList.ReverseListRecursively(node);
