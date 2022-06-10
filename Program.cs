@@ -6,6 +6,20 @@ namespace Algoritmos
     {
         static void Main(string[] args)
         {
+            var tree = new Trees.TreeNode(6, 
+                left:   new Trees.TreeNode(2,
+                    left:   new Trees.TreeNode(0),
+                    right:  new Trees.TreeNode(4,
+                        left:   new Trees.TreeNode(3),
+                        right:  new Trees.TreeNode(5))), 
+                right:  new Trees.TreeNode(8,
+                    left:   new Trees.TreeNode(7),
+                    right:  new Trees.TreeNode(9)));
+
+            var result = Trees.LCA_BinarySearchTree.LowestCommonAncestorLoop(tree, new Trees.TreeNode(2), new Trees.TreeNode(4));
+
+            Console.WriteLine(result);
+
             //var subTree = new Trees.TreeNode(val: 4,
             //    left: new Trees.TreeNode(val: 1),
             //    right: new Trees.TreeNode(val: 2));
@@ -21,13 +35,13 @@ namespace Algoritmos
             //var subtree = new Trees.TreeNode(1);
 
             //[3,4,5,1,null,2]
-            var tree = new Trees.TreeNode(val: 3,
-                left:   new Trees.TreeNode(val: 4, left: new Trees.TreeNode(1), right: null),
-                right:  new Trees.TreeNode(val: 5, left: new Trees.TreeNode(2)));
+            //var tree = new Trees.TreeNode(val: 3,
+            //    left:   new Trees.TreeNode(val: 4, left: new Trees.TreeNode(1), right: null),
+            //    right:  new Trees.TreeNode(val: 5, left: new Trees.TreeNode(2)));
 
-            var subtree = new Trees.TreeNode(3, left: new Trees.TreeNode(1), right: new Trees.TreeNode(2));
+            //var subtree = new Trees.TreeNode(3, left: new Trees.TreeNode(1), right: new Trees.TreeNode(2));
 
-            Console.WriteLine(Trees.SubTreeofAnotherTree.IsSubtree(tree, subtree));
+            //Console.WriteLine(Trees.SubTreeofAnotherTree.IsSubtree(tree, subtree));
 
             //var arvore = 
             //    new Trees.TreeNode(val: 0,

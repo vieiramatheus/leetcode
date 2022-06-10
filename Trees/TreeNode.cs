@@ -26,5 +26,11 @@ namespace Algoritmos.Trees
             return new TreeNode(val, leftClone, rightClone);
         }
 
+        public override string ToString()
+        {
+            var leftVal = left?.val;
+            var rightVal = right?.val;
+            return $"value: {val}, left: {leftVal}, right: {rightVal}.";
+        }
     }
 }
